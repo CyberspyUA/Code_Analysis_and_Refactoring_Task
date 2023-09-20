@@ -1,6 +1,6 @@
-﻿using Struk_Nikita_CAR_01;
+﻿namespace Struk_Nikita_CAR_01;
 
-internal class Program
+internal static class Program
 {
     private static void Main()
     {

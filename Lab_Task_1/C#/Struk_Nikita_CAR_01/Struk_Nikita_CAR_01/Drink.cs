@@ -12,7 +12,12 @@ namespace Struk_Nikita_CAR_01
         protected int cupSize;
         protected int sugarTeaSpoonQuantity;
 
-        protected Drink() { }
+        protected Drink(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_)
+        {
+            drinkName = drinkName_;
+            cupSize = cupSize_;
+            sugarTeaSpoonQuantity = sugarTeaSpoonQuantity_;
+        }
 
         ~Drink() { }
 

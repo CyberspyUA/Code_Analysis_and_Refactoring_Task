@@ -75,9 +75,8 @@ namespace Struk_Nikita_CAR_01
                 {
 
                     Console.WriteLine("Are you sure you want to quit? \n 1 - Yes; 0 - No \n");
-                    var quitChoice = 0;
                     Console.WriteLine("Enter quit choice:");
-                    quitChoice = Convert.ToInt32(Console.ReadLine());
+                    var quitChoice = Convert.ToInt32(Console.ReadLine());
                     switch (quitChoice)
                     {
                         case 0:

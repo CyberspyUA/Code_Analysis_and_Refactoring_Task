@@ -10,52 +10,9 @@ namespace Struk_Nikita_CAR_01
 
     public class Tea : Drink
     {
-        private string drinkName;
-        private int cupSize;
-        private int sugarTeaSpoonQuantity;
 
-        public Tea()
+        public Tea(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) : base(drinkName_, cupSize_, sugarTeaSpoonQuantity_)
         {
-        }
-
-        public Tea(string teaName, int teaCupSize, int sugarSpoonQuantity)
-        {
-            drinkName = teaName;
-            cupSize = teaCupSize;
-            sugarTeaSpoonQuantity = sugarSpoonQuantity;
-        }
-
-        public string GetDrinkName()
-        {
-            var copyDrinkName = drinkName;
-            return copyDrinkName;
-        }
-
-        public int GetCupSize()
-        {
-            var copyCupSize = cupSize;
-            return copyCupSize;
-        }
-
-        public int GetSugarTeaSpoonQuantity()
-        {
-            var copySugarTeaSpoonQuantity = sugarTeaSpoonQuantity;
-            return copySugarTeaSpoonQuantity;
-        }
-
-        public void SetDrinkName(string newDrinkName)
-        {
-            drinkName = newDrinkName;
-        }
-
-        public void SetCupSize(int newCupSize)
-        {
-            cupSize = newCupSize;
-        }
-
-        public void SetSugarTeaSpoonQuantity(int newSugarSpoonQuantity)
-        {
-            sugarTeaSpoonQuantity = newSugarSpoonQuantity;
         }
 
         public override void OrderShow()
@@ -82,10 +39,12 @@ namespace Struk_Nikita_CAR_01
 
         public void SugarAdding()
         {
-            var sugar_spoons = GetSugarTeaSpoonQuantity();
-            if (sugar_spoons == 0) return;
-            Console.WriteLine("Adding " + sugar_spoons + " tea spoons of sugar");
+            var sugarSpoons = GetSugarTeaSpoonQuantity();
+            if (sugarSpoons == 0) return;
+            Console.WriteLine("Adding " + sugarSpoons + " tea spoons of sugar");
             Thread.Sleep(1000);
         }
+
+        
     }
 }
