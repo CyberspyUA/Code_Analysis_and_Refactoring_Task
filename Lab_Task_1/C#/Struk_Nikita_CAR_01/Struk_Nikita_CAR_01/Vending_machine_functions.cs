@@ -41,89 +41,6 @@ namespace Struk_Nikita_CAR_01
             return tea_spoon;
         }
 
-        static bool func_is_dopping_needed()
-        {
-            bool is_dopping_needed_confirmation = false;
-            Console.WriteLine("Do you need doping?");
-            Console.WriteLine("1 - Yes; 0 - No");
-            is_dopping_needed_confirmation = Convert.ToBoolean(Console.ReadLine());
-            return is_dopping_needed_confirmation;
-        }
-
-        string func_dopping_choice()
-        {
-            int dopping_choice = 0;
-            func_dopings_show();
-            dopping_choice = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-
-            switch (dopping_choice)
-            {
-                case 1:
-                {
-                    return "Chocolate doping\n";
-                }
-                case 2:
-                {
-                    return "Caramel doping\n";
-                }
-                case 3:
-                {
-                    return "Strawberry doping\n";
-                }
-                case 4:
-                {
-                    return "Huckleberry doping\n";
-                }
-                case 5:
-                {
-                    return "Raspberry doping\n";
-                }
-                default:
-                {
-                    Console.WriteLine("Sorry, but this choice is invalid, try again.\n");
-                    return "";
-                }
-            }
-        }
-
-        bool func_are_sweets_needed()
-        {
-            bool is_dopping_needed_confirmation = false;
-            Console.WriteLine("Do you need sweets?");
-            Console.WriteLine("1 - Yes; 0 - No");
-            is_dopping_needed_confirmation = Convert.ToBoolean(Console.ReadLine());
-            return is_dopping_needed_confirmation;
-        }
-
-        string func_sweets_choice()
-        {
-            int sweets_choice = 0;
-            func_sweets_show();
-            sweets_choice = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-            switch (sweets_choice)
-            {
-                case 1:
-                {
-                    return "Original cacao\n";
-                }
-                case 2:
-                {
-                    return "Spiced cacao\n";
-                }
-                case 3:
-                {
-                    return "Hot chocolate\n";
-                }
-                default:
-                {
-                    Console.WriteLine("Sorry, but this choice is invalid, try again.\n");
-                    return "";
-                }
-            }
-        }
-
         bool func_menu(int choice)
         {
             switch (choice)
@@ -132,7 +49,6 @@ namespace Struk_Nikita_CAR_01
                 {
                     func_drink_choice();
                     return false;
-                    break;
                 }
                 case 2:
                 {
@@ -143,33 +59,14 @@ namespace Struk_Nikita_CAR_01
                     func_cacao_show();
                     Console.WriteLine("-----------------------------------------------------------------");
                     return false;
-                    break;
                 }
+                
                 case 3:
-                {
-                    func_sweets_show();
-                    return false;
-                    break;
-                }
-                case 4:
-                {
-                    func_dopings_show();
-                    return false;
-                    break;
-                }
-                case 5:
                 {
                     func_instructions_show();
                     return false;
-                    break;
                 }
-                case 6:
-                {
-                    func_location_show();
-                    return false;
-                    break;
-                }
-                case 7:
+                case 4:
                 {
 
                     Console.WriteLine("Are you sure you want to quit? \n 1 - Yes; 0 - No \n");
@@ -190,30 +87,23 @@ namespace Struk_Nikita_CAR_01
                         Console.WriteLine("Sorry, that option is not available. Try again.");
                         goto input_quit_option_again;
                     }
-
-                    break;
-                    return false;
                 }
                 default:
                 {
                     Console.WriteLine("Sorry, but this choice is invalid, try again.");
                     return false;
-                    break;
                 }
             }
         }
 
         static void func_options_show()
         {
-            Console.WriteLine("\t Please, input number from 1 to 7 by keyboard.");
+            Console.WriteLine("\t Please, input number from 1 to 4 by keyboard.");
             Console.WriteLine("\t Available options:");
             Console.WriteLine("1) Choose a drink");
             Console.WriteLine("2) Show all drinks");
-            Console.WriteLine("3) Show all sweets");
-            Console.WriteLine("4) Show all dopings");
-            Console.WriteLine("5) Show help menu");
-            Console.WriteLine("6) Locations of other vending machines");
-            Console.WriteLine("7) Quit vending machine.");
+            Console.WriteLine("3) Show help menu");
+            Console.WriteLine("4) Quit vending machine.");
         }
 
         static void func_coffee_show()
@@ -222,12 +112,6 @@ namespace Struk_Nikita_CAR_01
             Console.WriteLine("\t1. Esspresso");
             Console.WriteLine("\t2. Americano");
             Console.WriteLine("\t3. Cappuccino");
-            Console.WriteLine("\t4. Makoto");
-            Console.WriteLine("\t5. Doppio");
-            Console.WriteLine("\t6. Latte");
-            Console.WriteLine("\t7. Irish Whiskey");
-            Console.WriteLine("\t8. Machiato");
-            Console.WriteLine("\t9. Moccachino");
         }
 
         static void func_tea_show()
@@ -236,8 +120,6 @@ namespace Struk_Nikita_CAR_01
             Console.WriteLine("\t1. Black tea");
             Console.WriteLine("\t2. Green tea");
             Console.WriteLine("\t3. Red tea");
-            Console.WriteLine("\t4. Yellow tea");
-            Console.WriteLine("\t5. Fruit tea");
         }
 
         static void func_cacao_show()
@@ -248,13 +130,6 @@ namespace Struk_Nikita_CAR_01
             Console.WriteLine("\t3. Hot chocolate");
         }
 
-        static void func_sweets_show()
-        {
-            Console.WriteLine("Sweets:");
-            Console.WriteLine("\t1 Marshmallow");
-            Console.WriteLine("\t2 Chocolate chips");
-            Console.WriteLine("\t3 M&M`s sweets");
-        }
 
         static void func_instructions_show()
         {
@@ -262,20 +137,9 @@ namespace Struk_Nikita_CAR_01
             Console.WriteLine("\t This is a Struk.corp vending machine assistant.");
             Console.WriteLine("\t Firstly, I provide you with drinks menu. You can either choose one or quit.");
             Console.WriteLine("\t When drink is chosen. I should have some time to make you a drink.");
-            Console.WriteLine("\t It takes from 60 up to 90 seconds.");
+            Console.WriteLine("\t It takes from 10 up to 15 seconds.");
             Console.WriteLine("\t In addition for some drinks, I can serve you with sugar or other sweets.");
             Console.WriteLine("\t If any questions left, you can replay this message by entering 5");
-        }
-
-        static void func_location_show()
-        {
-            Console.WriteLine("You can find other vending machines at following addresses:");
-            Console.WriteLine("*Green Street 82. Oklahoma");
-            Console.WriteLine("*Blue Street 14. Oklahoma");
-            Console.WriteLine("*Red Street 2. New Jersey");
-            Console.WriteLine("*Yellow Street 7. Kentucky");
-            Console.WriteLine("*Brown Street 67. Dallas");
-            Console.WriteLine("*Pink Street 1. Chicago");
         }
 
         static void func_cup_size_show()
@@ -310,128 +174,124 @@ namespace Struk_Nikita_CAR_01
                 {
                     Console.WriteLine("You chose coffee. What coffee drink do you want?");
                     func_coffee_show();
-                    bool coffee_choice_confirmation = func_coffee_choice();
+                    bool coffee_choice_confirmation = false;
+                    while(!coffee_choice_confirmation)
+                      coffee_choice_confirmation = func_drink_subtype_choice(drink_choice);
                     return true;
-                    break;
                 }
                 case 2:
                 {
                     Console.WriteLine("You chose tea. What tea drink do you want?");
                     func_tea_show();
-                    bool tea_choice_confirmation = func_tea_choice();
+                        bool tea_choice_confirmation = false;
+                        while (!tea_choice_confirmation)
+                            tea_choice_confirmation = func_drink_subtype_choice(drink_choice);
                     return true;
-                    break;
                 }
                 case 3:
                 {
                     Console.WriteLine("You chose cacao. What cacao drink do you want?");
                     func_cacao_show();
-                    bool cacao_choice_confirmation = func_cacao_choice();
+                    bool cacao_choice_confirmation = false;
+                        while (!cacao_choice_confirmation)
+                            cacao_choice_confirmation = func_drink_subtype_choice(drink_choice);
                     return true;
-                    break;
                 }
                 default:
                 {
                     Console.WriteLine("Sorry, but this choice is invalid, try again.\n");
                     return false;
-                    break;
                 }
             }
         }
-        bool func_coffee_choice()
+        bool func_drink_subtype_choice(int drink_type_choice)
         {
-            int coffee_choice = 0;
-            coffee_choice = Convert.ToInt32(Console.ReadLine());
-            switch (coffee_choice)
+            int drink_subtype_choice = 0;
+            drink_subtype_choice = Convert.ToInt32(Console.ReadLine());
+            bool confirmation = func_are_you_sure();
+            if (confirmation)
             {
-                case 1:
+                int cup_size = 0;
+                while (true)
                 {
-                    Console.WriteLine("Espresso is chosen. \n");
-                    bool confirmation = func_are_you_sure();
-                    if (confirmation)
+                    cup_size = func_cup_size_choice();
+                    if (cup_size == 100 || cup_size == 200 || cup_size == 300)
                     {
-                        string coffee_name = "Espresso";
-                        func_cup_size_show();
-                        int cup_size = 0;
-                        while (true)
-                        {
-                            cup_size = func_cup_size_choice();
-                            if (cup_size == 100 || cup_size == 200 || cup_size == 300)
-                            {
-                                break;
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
-                        bool is_sugar_needed = func_is_sugar_needed();
-                        int sugar_spoons = 0;
-                        if (is_sugar_needed)
-                        {
-                            sugar_spoons = func_sugar_spoons_quantity();
-                        }
-                        bool is_dopping_needed = func_is_dopping_needed();
-                        string dopp_name = "";
-                        if (is_dopping_needed)
-                        {
-                            while (!string.IsNullOrEmpty(dopp_name))
-                            {
-                                dopp_name = func_dopping_choice();
-                            }
-                        }
-                        Coffee coffee = new Coffee(coffee_name, cup_size, sugar_spoons, dopp_name, is_dopping_needed);
-                        Console.WriteLine("Your order\n");
-                        Console.WriteLine("-------------------------------------------------------");
+                        break;
                     }
-                    break;
+                    else
+                    {
+                        continue;
+                    }
                 }
-                case 2:
+                bool is_sugar_needed = func_is_sugar_needed();
+                int sugar_spoons = 0;
+                if (is_sugar_needed)
                 {
-                    Console.WriteLine("Americano is chosen. \n");
-                    bool confirmation = func_are_you_sure();
-                    if (confirmation)
-                    {
-                        string coffee_name = "Americano";
-                        func_cup_size_show();
-                        int cup_size = 0;
-                        while (true)
-                        {
-                            cup_size = func_cup_size_choice();
-                            if (cup_size == 100 || cup_size == 200 || cup_size == 300)
-                            {
-                                break;
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
-                        bool is_sugar_needed = func_is_sugar_needed();
-                        int sugar_spoons = 0;
-                        if (is_sugar_needed)
-                        {
-                            sugar_spoons = func_sugar_spoons_quantity();
-                        }
-                        bool is_dopping_needed = func_is_dopping_needed();
-                        string dopp_name = "";
-                        if (is_dopping_needed)
-                        {
-                            while (!string.IsNullOrEmpty(dopp_name))
-                            {
-                                dopp_name = func_dopping_choice();
-                            }
-                        }
-                        Coffee coffee = new Coffee(coffee_name, cup_size, sugar_spoons, dopp_name, is_dopping_needed);
-                        Console.WriteLine("Your order\n");
-                        Console.WriteLine("-----------------------------------------------------------------");
-                    }
-                    break;
+                    sugar_spoons = func_sugar_spoons_quantity();
                 }
-
-                //Continue from case 3
+                return true;
             }
-
+            else
+            {
+                Console.WriteLine("Retype your choices.");
+                return false;
+            }
         }
+    int func_cup_size_choice()
+    {
+        int cup_choice = Convert.ToInt32(Console.ReadLine());
+        switch (cup_choice)
+        {
+            case 1:
+                {
+                    return 100;
+                }
+            case 2:
+                {
+                    return 200;
+                }
+            case 3:
+                {
+                    return 300;
+                }
+            default:
+                {
+                    Console.WriteLine("Sorry, but this choice is invalid, try again.");
+                    break;
+                }
+        }
+    }
+     void drink_brewing(int drink_type_choice, string drink_name, int cup_size, int sugar_spoons)
+        {
+            if(drink_type_choice == 1)
+            {
+                Coffee coffee = new Coffee(drink_name, cup_size, sugar_spoons);
+                Console.WriteLine("Your order");
+                Console.WriteLine("-----------------------------------------------------------------");
+                coffee.order_show();
+                Console.WriteLine("Now, wait for a coffee to get ready.");
+                coffee.brewing();
+            }
+            else if(drink_type_choice == 2)
+            {
+                Tea tea = new Tea(drink_name, cup_size, sugar_spoons);
+                Console.WriteLine("Your order");
+                Console.WriteLine("-----------------------------------------------------------------");
+                tea.order_show();
+                Console.WriteLine("Now, wait for a tea to get ready.");
+                tea.brewing();
+            }
+            else if(drink_type_choice == 3)
+            {
+                Cacao cacao = new Cacao(drink_name, cup_size, sugar_spoons);
+                Console.WriteLine("Your order");
+                Console.WriteLine("-----------------------------------------------------------------");
+                cacao.order_show();
+                Console.WriteLine("Now, wait for a tea to get ready.");
+                cacao.brewing();
+            }
+        }
+
     }
 }
