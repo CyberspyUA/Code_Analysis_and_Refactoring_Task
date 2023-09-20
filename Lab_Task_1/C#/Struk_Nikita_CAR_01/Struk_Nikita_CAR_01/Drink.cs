@@ -8,9 +8,9 @@ namespace Struk_Nikita_CAR_01
 {
     public abstract class Drink
     {
-        protected string drinkName;
-        protected int cupSize;
-        protected int sugarTeaSpoonQuantity;
+        protected string drinkName; //Назва напою
+        protected int cupSize; // Розмір стаканчика
+        protected int sugarTeaSpoonQuantity; //Кількість чайних ложок цукру.
 
         protected Drink(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_)
         {
@@ -18,8 +18,6 @@ namespace Struk_Nikita_CAR_01
             cupSize = cupSize_;
             sugarTeaSpoonQuantity = sugarTeaSpoonQuantity_;
         }
-
-        ~Drink() { }
 
         public abstract void OrderShow();
         public string GetDrinkName()
@@ -38,21 +36,6 @@ namespace Struk_Nikita_CAR_01
         {
             var copySugarTeaSpoonQuantity = sugarTeaSpoonQuantity;
             return copySugarTeaSpoonQuantity;
-        }
-
-        public void SetDrinkName(string newDrinkName)
-        {
-            drinkName = newDrinkName;
-        }
-
-        public void SetCupSize(int newCupSize)
-        {
-            cupSize = newCupSize;
-        }
-
-        public void SetSugarTeaSpoonQuantity(int newSugarSpoonQuantity)
-        {
-            sugarTeaSpoonQuantity = newSugarSpoonQuantity;
         }
 
     }

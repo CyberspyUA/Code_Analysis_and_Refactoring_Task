@@ -13,33 +13,39 @@ namespace Struk_Nikita_CAR_01
         public Cacao(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) : base(drinkName_, cupSize_, sugarTeaSpoonQuantity_)
         {
         }
-
-        ~Cacao() { }
-
-        public override void OrderShow()
+        /**
+         * Метод, що виводить деталі замовлення.
+         */
+        public override void OrderShow() 
         {
             Console.WriteLine(GetDrinkName());
-            Console.WriteLine("Size of cup: " + GetCupSize());
-            Console.WriteLine("Sugar full spoons: " + GetSugarTeaSpoonQuantity());
+            Console.WriteLine("Об'єм стакану: " + GetCupSize());
+            Console.WriteLine("Додано: " + GetSugarTeaSpoonQuantity() + "ложок цукру.");
         }
-        public void Brewing()
-        {
-            Console.WriteLine("-----------------------------------------------------------");
-            Console.WriteLine("Heating milk.");
-            Thread.Sleep(4000);
-            Console.WriteLine("Putting a cup.");
-            Thread.Sleep(2000);
-            Console.WriteLine("Pouring cacao in the cup");
-            SugarAdding();
-            Console.WriteLine("Your " + GetDrinkName() + " is ready! Enjoy!");
-            Console.WriteLine("-----------------------------------------------------------");
-        }
+        /**
+         * Метод, що додає ложки цукру до напою.
+         */
         public void SugarAdding()
         {
             var sugarSpoons = GetSugarTeaSpoonQuantity();
             if (sugarSpoons == 0) return;
-            Console.WriteLine("Adding " + sugarSpoons + " tea spoons of sugar");
+            Console.WriteLine("Додаємо " + sugarSpoons + " чайних ложок цукру");
             Thread.Sleep(1000);
+        }
+        /**
+         * Метод, що готує какао.
+         */
+        public void Brewing()
+        {
+            Console.WriteLine("-----------------------------------------------------------");
+            Console.WriteLine("Розігріваємо молоко...");
+            Thread.Sleep(4000);
+            Console.WriteLine("Готуємо стакан.");
+            Thread.Sleep(2000);
+            Console.WriteLine("Наливаємо какао у стакан.");
+            SugarAdding();
+            Console.WriteLine("Ваш " + GetDrinkName() + " готовий! Смачного!");
+            Console.WriteLine("-----------------------------------------------------------");
         }
     }
 }
