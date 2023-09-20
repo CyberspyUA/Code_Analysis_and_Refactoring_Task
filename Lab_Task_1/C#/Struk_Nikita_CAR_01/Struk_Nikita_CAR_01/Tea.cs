@@ -11,7 +11,8 @@ namespace Struk_Nikita_CAR_01
     public class Tea : Drink
     {
 
-        public Tea(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) : base(drinkName_, cupSize_, sugarTeaSpoonQuantity_)
+        public Tea(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) 
+            : base(drinkName_, cupSize_, sugarTeaSpoonQuantity_)
         {
         }
         /**
