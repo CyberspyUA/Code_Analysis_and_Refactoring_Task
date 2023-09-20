@@ -1,15 +1,18 @@
-﻿internal class Program
+﻿using Struk_Nikita_CAR_01;
+
+internal class Program
 {
     private static void Main()
     {
-        Vending_machine_functions.func_instructions_show();
-        bool res = false;
-        while (res == false)
+
+        var res = false;
+        while (!res)
         {
-            Vending_machine_functions.func_options_show();
-            int choice = Convert.ToInt32(Console.ReadLine());
-            res = Vending_machine_functions.func_menu(choice);
-            Console.WriteLine("**************************************************************************");
+            VendingMachineFunctions.FuncOptionsShow();
+            var choice = Convert.ToInt32(Console.ReadLine());
+            res = VendingMachineFunctions.FuncMenu(choice);
         }
+        Console.Clear();
+        Console.WriteLine("Thank you for investing your time! We wish you a great day!");
     }
 }

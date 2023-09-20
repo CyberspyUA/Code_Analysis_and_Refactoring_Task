@@ -10,65 +10,80 @@ namespace Struk_Nikita_CAR_01
 
     class Coffee : Drink
     {
-        private string drink_name;
-        private int cup_size;
-        private int sugar_tea_spoon_quantity;
+        private string drinkName;
+        private int cupSize;
+        private int sugarTeaSpoonQuantity;
 
         public Coffee()
         {
         }
 
-        public Coffee(string coffee_name, int coffee_cup_size, int sugar_spoon_quantity)
+        public Coffee(string coffeeName, int coffeeCupSize, int sugarSpoonQuantity)
         {
-            drink_name = coffee_name;
-            cup_size = coffee_cup_size;
-            sugar_tea_spoon_quantity = sugar_spoon_quantity;
+            drinkName = coffeeName;
+            cupSize = coffeeCupSize;
+            sugarTeaSpoonQuantity = sugarSpoonQuantity;
         }
 
-        public string get_drink_name()
+        public string GetDrinkName()
         {
-            string copy_drink_name = drink_name;
-            return copy_drink_name;
+            var copyDrinkName = drinkName;
+            return copyDrinkName;
         }
 
-        public int get_cup_size()
+        public int GetCupSize()
         {
-            int copy_cup_size = cup_size;
-            return copy_cup_size;
+            var copyCupSize = cupSize;
+            return copyCupSize;
         }
 
-        public int get_sugar_tea_spoon_quantity()
+        public int GetSugarTeaSpoonQuantity()
         {
-            int copy_sugar_tea_spoon_quantity = sugar_tea_spoon_quantity;
-            return copy_sugar_tea_spoon_quantity;
+            var copySugarTeaSpoonQuantity = sugarTeaSpoonQuantity;
+            return copySugarTeaSpoonQuantity;
         }
 
-        public void set_drink_name(string new_drink_name)
+        public void SetDrinkName(string newDrinkName)
         {
-            drink_name = new_drink_name;
+            drinkName = newDrinkName;
         }
 
-        public void set_cup_size(int new_cup_size)
+        public void SetCupSize(int newCupSize)
         {
-            cup_size = new_cup_size;
+            cupSize = newCupSize;
         }
-        public void set_sugar_tea_spoon_quantity(int new_sugar_spoon_quantity)
+        public void SetSugarTeaSpoonQuantity(int newSugarSpoonQuantity)
         {
-            sugar_tea_spoon_quantity = new_sugar_spoon_quantity;
-        }
-
-        override public void order_show()
-        {
-
+            sugarTeaSpoonQuantity = newSugarSpoonQuantity;
         }
 
-        public void brewing()
+        public override void OrderShow()
         {
-
+            Console.WriteLine(GetDrinkName());
+            Console.WriteLine("Size of cup: " + GetCupSize());
+            Console.WriteLine("Sugar full spoons: " + GetSugarTeaSpoonQuantity());
         }
-        public void sugar_adding()
-        {
 
+        public void Brewing()
+        {
+            Console.WriteLine("-----------------------------------------------------------");
+            Console.WriteLine("Heating water and milk.");
+            Thread.Sleep(3000);
+            Console.WriteLine("Shrinking coffee beans.");
+            Thread.Sleep(3000);
+            Console.WriteLine("Putting a cup.");
+            Thread.Sleep(3000);
+            Console.WriteLine("Pouring coffee in the cup");
+            SugarAdding();
+            Console.WriteLine("Your " + GetDrinkName() + " is ready! Enjoy!");
+            Console.WriteLine("-----------------------------------------------------------");
+        }
+        public void SugarAdding()
+        {
+            var sugarSpoons = GetSugarTeaSpoonQuantity();
+            if (sugarSpoons == 0) return;
+            Console.WriteLine("Adding " + sugarSpoons + " tea spoons of sugar");
+            Thread.Sleep(1000);
         }
     }
 }
