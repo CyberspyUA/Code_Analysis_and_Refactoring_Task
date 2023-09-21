@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,8 +18,6 @@ namespace Struk_Nikita_CAR_01
             cupSize = cupSize_;
             sugarTeaSpoonQuantity = sugarTeaSpoonQuantity_;
         }
-
-        ~Drink() { }
 
         public abstract void OrderShow();
         public string GetDrinkName()

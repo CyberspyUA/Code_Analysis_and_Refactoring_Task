@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +13,6 @@ namespace Struk_Nikita_CAR_01
         public Cacao(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) : base(drinkName_, cupSize_, sugarTeaSpoonQuantity_)
         {
         }
-
-        ~Cacao() { }
 
         public override void OrderShow()
         {
