@@ -11,37 +11,29 @@ namespace Struk_Nikita_CAR_01
     class Coffee : Drink
     {
 
-        public Coffee(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) : base(drinkName_, cupSize_, sugarTeaSpoonQuantity_)
+        public Coffee(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) 
+            : base(drinkName_, cupSize_, sugarTeaSpoonQuantity_)
         {
         }
-        public override void OrderShow()
-        {
-            Console.WriteLine(GetDrinkName());
-            Console.WriteLine("Size of cup: " + GetCupSize());
-            Console.WriteLine("Sugar full spoons: " + GetSugarTeaSpoonQuantity());
-        }
-
-        public void Brewing()
+        
+        /**
+         * Метод, що готує каву.
+         */
+        public override void Brewing()
         {
             Console.WriteLine("-----------------------------------------------------------");
-            Console.WriteLine("Heating water and milk.");
+            Console.WriteLine("Гріємо молоко та воду.");
             Thread.Sleep(3000);
-            Console.WriteLine("Shrinking coffee beans.");
+            Console.WriteLine("Мелимо кавові зерна.");
             Thread.Sleep(3000);
-            Console.WriteLine("Putting a cup.");
+            Console.WriteLine("Готуємо стакан.");
             Thread.Sleep(3000);
-            Console.WriteLine("Pouring coffee in the cup");
+            Console.WriteLine("Наливаємо каву у стакан.");
             SugarAdding();
-            Console.WriteLine("Your " + GetDrinkName() + " is ready! Enjoy!");
+            Console.WriteLine("Ваш " + GetDrinkName() + " готовий! Смачного!");
             Console.WriteLine("-----------------------------------------------------------");
         }
-        public void SugarAdding()
-        {
-            var sugarSpoons = GetSugarTeaSpoonQuantity();
-            if (sugarSpoons == 0) return;
-            Console.WriteLine("Adding " + sugarSpoons + " tea spoons of sugar");
-            Thread.Sleep(1000);
-        }
+        
 
         
     }

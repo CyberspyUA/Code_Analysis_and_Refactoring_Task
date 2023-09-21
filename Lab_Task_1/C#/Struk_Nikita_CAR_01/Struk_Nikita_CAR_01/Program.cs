@@ -4,7 +4,7 @@ internal static class Program
 {
     private static void Main()
     {
-
+        //
         var res = false;
         while (!res)
         {
@@ -13,6 +13,6 @@ internal static class Program
             res = VendingMachineFunctions.FuncMenu(choice);
         }
         Console.Clear();
-        Console.WriteLine("Thank you for investing your time! We wish you a great day!");
+        Console.WriteLine("Дякуємо, що приділили нам свій час! Бажаємо вам чудового дня!");
     }
 }

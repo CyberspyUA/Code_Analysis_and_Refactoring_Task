@@ -8,9 +8,9 @@ namespace Struk_Nikita_CAR_01
 {
     public abstract class Drink
     {
-        protected string drinkName;
-        protected int cupSize;
-        protected int sugarTeaSpoonQuantity;
+        protected string drinkName; //Назва напою
+        protected int cupSize; // Розмір стаканчика
+        protected int sugarTeaSpoonQuantity; //Кількість чайних ложок цукру.
 
         protected Drink(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_)
         {
@@ -18,10 +18,7 @@ namespace Struk_Nikita_CAR_01
             cupSize = cupSize_;
             sugarTeaSpoonQuantity = sugarTeaSpoonQuantity_;
         }
-
-        ~Drink() { }
-
-        public abstract void OrderShow();
+        
         public string GetDrinkName()
         {
             var copyDrinkName = drinkName;
@@ -39,21 +36,29 @@ namespace Struk_Nikita_CAR_01
             var copySugarTeaSpoonQuantity = sugarTeaSpoonQuantity;
             return copySugarTeaSpoonQuantity;
         }
-
-        public void SetDrinkName(string newDrinkName)
+        /**
+         * Метод, що додає ложки цукру до напою.
+         */
+        public void SugarAdding()
         {
-            drinkName = newDrinkName;
+            var sugarSpoons = GetSugarTeaSpoonQuantity();
+            if (sugarSpoons == 0) return;
+            Console.WriteLine("Додаємо " + sugarSpoons + " чайних ложок цукру");
+            Thread.Sleep(1000);
         }
+        /**
+         * Метод, що виводить деталі замовлення.
+         */
 
-        public void SetCupSize(int newCupSize)
+        public void OrderShow()
         {
-            cupSize = newCupSize;
+            Console.WriteLine(GetDrinkName());
+            Console.WriteLine("Об'єм стакану: " + GetCupSize());
+            Console.WriteLine("Додано: " + GetSugarTeaSpoonQuantity() + "ложок цукру.");
         }
-
-        public void SetSugarTeaSpoonQuantity(int newSugarSpoonQuantity)
-        {
-            sugarTeaSpoonQuantity = newSugarSpoonQuantity;
-        }
-
+        /**
+         * Метод, що готує напій за введеними даними.
+         */
+        public abstract void Brewing();
     }
 }
