@@ -16,18 +16,9 @@ namespace Struk_Nikita_CAR_01
         {
         }
         /**
-         * Метод, що виводить деталі замовлення.
-         */
-        public override void OrderShow()
-        {
-            Console.WriteLine(GetDrinkName());
-            Console.WriteLine("Об'єм стакану: " + GetCupSize());
-            Console.WriteLine("Додано: " + GetSugarTeaSpoonQuantity() + "ложок цукру.");
-        }
-        /**
          * Метод, що готує чай.
          */
-        public void Brewing()
+        public override void Brewing()
         {
             Console.WriteLine("-----------------------------------------------------------");
             Console.WriteLine("Гріємо воду.");
@@ -40,16 +31,6 @@ namespace Struk_Nikita_CAR_01
             SugarAdding();
             Console.WriteLine("Ваш " + GetDrinkName() + " готовий! Смачного!");
             Console.WriteLine("-----------------------------------------------------------");
-        }
-        /**
-         * Метод, що додає ложки цукру до напою.
-         */
-        public void SugarAdding()
-        {
-            var sugarSpoons = GetSugarTeaSpoonQuantity();
-            if (sugarSpoons == 0) return;
-            Console.WriteLine("Додаємо " + sugarSpoons + " чайних ложок цукру");
-            Thread.Sleep(1000);
         }
 
         

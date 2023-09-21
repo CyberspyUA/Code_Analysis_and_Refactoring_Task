@@ -18,8 +18,7 @@ namespace Struk_Nikita_CAR_01
             cupSize = cupSize_;
             sugarTeaSpoonQuantity = sugarTeaSpoonQuantity_;
         }
-
-        public abstract void OrderShow();
+        
         public string GetDrinkName()
         {
             var copyDrinkName = drinkName;
@@ -37,6 +36,29 @@ namespace Struk_Nikita_CAR_01
             var copySugarTeaSpoonQuantity = sugarTeaSpoonQuantity;
             return copySugarTeaSpoonQuantity;
         }
+        /**
+         * Метод, що додає ложки цукру до напою.
+         */
+        public void SugarAdding()
+        {
+            var sugarSpoons = GetSugarTeaSpoonQuantity();
+            if (sugarSpoons == 0) return;
+            Console.WriteLine("Додаємо " + sugarSpoons + " чайних ложок цукру");
+            Thread.Sleep(1000);
+        }
+        /**
+         * Метод, що виводить деталі замовлення.
+         */
 
+        public void OrderShow()
+        {
+            Console.WriteLine(GetDrinkName());
+            Console.WriteLine("Об'єм стакану: " + GetCupSize());
+            Console.WriteLine("Додано: " + GetSugarTeaSpoonQuantity() + "ложок цукру.");
+        }
+        /**
+         * Метод, що готує напій за введеними даними.
+         */
+        public abstract void Brewing();
     }
 }
