@@ -8,7 +8,7 @@ namespace Struk_Nikita_CAR_01
 {
     using System;
 
-    public class Tea : Drink
+    internal class Tea : Drink
     {
 
         public Tea(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) 

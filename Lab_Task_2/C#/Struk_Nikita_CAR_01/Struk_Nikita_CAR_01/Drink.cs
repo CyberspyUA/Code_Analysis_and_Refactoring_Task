@@ -9,9 +9,8 @@ namespace Struk_Nikita_CAR_01
     public abstract class Drink
     {
         protected string drinkName; //Назва напою
-        protected int cupSize; // Розмір стаканчика
-        protected int sugarTeaSpoonQuantity; //Кількість чайних ложок цукру.
-
+        protected int cupSize; // Розмiр стаканчика
+        protected int sugarTeaSpoonQuantity; //Кiлькiсть чайних ложок цукру.
         protected Drink(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_)
         {
             drinkName = drinkName_;
@@ -47,7 +46,7 @@ namespace Struk_Nikita_CAR_01
             Thread.Sleep(1000);
         }
         /**
-         * Метод, що виводить деталі замовлення.
+         * Метод, що виводить деталi замовлення.
          */
 
         public void OrderShow()
@@ -57,7 +56,7 @@ namespace Struk_Nikita_CAR_01
             Console.WriteLine("Додано: " + GetSugarTeaSpoonQuantity() + "ложок цукру.");
         }
         /**
-         * Метод, що готує напій за введеними даними.
+         * Метод, що готує напiй за введеними даними.
          */
         public abstract void Brewing();
     }

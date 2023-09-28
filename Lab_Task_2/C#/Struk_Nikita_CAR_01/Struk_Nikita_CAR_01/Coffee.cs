@@ -8,7 +8,7 @@ namespace Struk_Nikita_CAR_01
 {
     using System;
 
-    class Coffee : Drink
+    internal class Coffee : Drink
     {
 
         public Coffee(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) 
@@ -22,9 +22,9 @@ namespace Struk_Nikita_CAR_01
         public override void Brewing()
         {
             Console.WriteLine("-----------------------------------------------------------");
-            Console.WriteLine("Гріємо молоко та воду.");
+            Console.WriteLine("Грiємо молоко та воду.");
             Thread.Sleep(3000);
-            Console.WriteLine("Мелимо кавові зерна.");
+            Console.WriteLine("Мелимо кавовi зерна.");
             Thread.Sleep(3000);
             Console.WriteLine("Готуємо стакан.");
             Thread.Sleep(3000);

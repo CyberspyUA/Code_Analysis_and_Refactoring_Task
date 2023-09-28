@@ -88,47 +88,47 @@
                 if (drinkTypeChoice == 1 && drinkSubtypeChoice == 1)
                 {
                     drinkName = "Еспрессо";
-                    DrinkBrawery.BrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 }
                 else if (drinkTypeChoice == 1 && drinkSubtypeChoice == 2)
                 {
                     drinkName = "Американо";
-                    DrinkBrawery.BrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 }
                 else if (drinkTypeChoice == 1 && drinkSubtypeChoice == 3)
                 {
                     drinkName = "Капучіно";
-                    DrinkBrawery.BrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 }
                 else if (drinkTypeChoice == 2 && drinkSubtypeChoice == 1)
                 {
                     drinkName = "Чорний чай";
-                    DrinkBrawery.BrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 }
                 else if (drinkTypeChoice == 2 && drinkSubtypeChoice == 2)
                 {
                     drinkName = "Зелений чай";
-                    DrinkBrawery.BrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 }
                 else if (drinkTypeChoice == 2 && drinkSubtypeChoice == 3)
                 {
                     drinkName = "Червоний чай";
-                    DrinkBrawery.BrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 }
                 else if (drinkTypeChoice == 3 && drinkSubtypeChoice == 1)
                 {
                     drinkName = "Звичайне какао";
-                    DrinkBrawery.BrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 }
                 else if (drinkTypeChoice == 3 && drinkSubtypeChoice == 2)
                 {
                     drinkName = "Пряне какао";
-                    DrinkBrawery.BrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 }
                 else if (drinkTypeChoice == 3 && drinkSubtypeChoice == 3)
                 {
                     drinkName = "Гарячий шоколад";
-                    DrinkBrawery.BrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 }
 
                 return true;
