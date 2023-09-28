@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Struk_Nikita_CAR_01
+﻿namespace Product
 {
     using System;
 
@@ -21,7 +15,7 @@ namespace Struk_Nikita_CAR_01
         public override void Brewing()
         {
             Console.WriteLine("-----------------------------------------------------------");
-            Console.WriteLine("Гріємо воду.");
+            Console.WriteLine("Грiємо воду.");
             Thread.Sleep(3000);
             Console.WriteLine("Мелимо чайне листя.");
             Thread.Sleep(3000);

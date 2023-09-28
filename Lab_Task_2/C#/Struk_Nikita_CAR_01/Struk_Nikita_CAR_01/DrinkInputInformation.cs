@@ -1,24 +1,24 @@
-﻿namespace Struk_Nikita_CAR_01
+﻿namespace UI
 {
-    internal class InputInformation
+    internal static class DrinkInputInformation
     {
-        public static bool AreYouSure()  
+        public static bool AreYouSure()
         {
-            Console.WriteLine("Ви впевнені у цьому?");
-            Console.WriteLine("1 - Так, 0 - Ні");
+            Console.WriteLine("Ви впевненi у цьому?");
+            Console.WriteLine("1 - Так, 0 - Нi");
             var choice = Convert.ToInt32(Console.ReadLine());
             return choice == 1;
         }
         /**
          * Метод, що дає змогу обрати своє замовлення.
-         * Обравши необхідний вид напою, потрібно вказати підвид.
+         * Обравши необхiдний вид напою, потрiбно вказати пiдвид.
          */
         public static bool ChooseDrink()
         {
-            Console.WriteLine("Оберіть бажаний напій. На зараз, ми можемо запропонувати такі напої:");
-            DisplayInformation.ShowCoffeeOptions();
-            DisplayInformation.ShowTeaOptions();
-            DisplayInformation.ShowCacaoOptions();
+            Console.WriteLine("Оберiть бажаний напiй. На зараз, ми можемо запропонувати такi напої:");
+            DisplayOptions.ShowCoffeeOptions();
+            DisplayOptions.ShowTeaOptions();
+            DisplayOptions.ShowCacaoOptions();
             Console.WriteLine("1 - Кава, 2 - Чай, 3 - Какао");
             var drinkChoice = Convert.ToInt32(Console.ReadLine());
             switch (drinkChoice)
@@ -26,7 +26,7 @@
                 case 1:
                     {
                         Console.WriteLine("Ви обрали каву. Яку каву ви бажаєте?");
-                        DisplayInformation.ShowCoffeeOptions();
+                        DisplayOptions.ShowCoffeeOptions();
                         var coffeeChoiceConfirmation = false;
                         while (!coffeeChoiceConfirmation)
                             coffeeChoiceConfirmation = ChooseDrinkSubtype(drinkChoice);
@@ -35,7 +35,7 @@
                 case 2:
                     {
                         Console.WriteLine("Ви обрали чай. Який чай ви бажаєте?");
-                        DisplayInformation.ShowTeaOptions();
+                        DisplayOptions.ShowTeaOptions();
                         var teaChoiceConfirmation = false;
                         while (!teaChoiceConfirmation)
                             teaChoiceConfirmation = ChooseDrinkSubtype(drinkChoice);
@@ -44,7 +44,7 @@
                 case 3:
                     {
                         Console.WriteLine("Ви обрали какао. Яке какао ви бажаєте?");
-                        DisplayInformation.ShowCacaoOptions();
+                        DisplayOptions.ShowCacaoOptions();
                         var cacaoChoiceConfirmation = false;
                         while (!cacaoChoiceConfirmation)
                             cacaoChoiceConfirmation = ChooseDrinkSubtype(drinkChoice);
@@ -52,14 +52,14 @@
                     }
                 default:
                     {
-                        Console.WriteLine("Вибачте, але цей вибір є недійсним, спробуйте ще раз.\n");
+                        Console.WriteLine("Вибачте, але цей вибiр є недiйсним, спробуйте ще раз.\n");
                         return false;
                     }
             }
         }
         /**
-         * Метод, що дає змогу обрати підвид напою.
-         * Обравши необхідний підвид напою, йде його приготування
+         * Метод, що дає змогу обрати пiдвид напою.
+         * Обравши необхiдний пiдвид напою, йде його приготування
          */
         public static bool ChooseDrinkSubtype(int drinkTypeChoice)
         {
@@ -67,7 +67,7 @@
             var confirmation = AreYouSure();
             if (confirmation)
             {
-                DisplayInformation.ShowCupSizeOptions();
+                DisplayOptions.ShowCupSizeOptions();
                 int cupSize;
                 while (true)
                 {
@@ -97,7 +97,7 @@
                 }
                 else if (drinkTypeChoice == 1 && drinkSubtypeChoice == 3)
                 {
-                    drinkName = "Капучіно";
+                    drinkName = "Капучiно";
                     DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 }
                 else if (drinkTypeChoice == 2 && drinkSubtypeChoice == 1)
@@ -133,11 +133,11 @@
 
                 return true;
             }
-            Console.WriteLine("Повторіть свій вибір.");
+            Console.WriteLine("Повторiть свiй вибiр.");
             return false;
         }
         /**
-         * Метод, що пропонує обрати розмір стаканчика серед запропонованих варіантів.
+         * Метод, що пропонує обрати розмiр стаканчика серед запропонованих варiантiв.
          */
         public static int ChooseCupSize()
         {
@@ -158,7 +158,7 @@
                     }
                 default:
                     {
-                        Console.WriteLine("Вибачте, цей вибір є недійсним.");
+                        Console.WriteLine("Вибачте, цей вибiр є недiйсним.");
                         return 0;
                     }
             }

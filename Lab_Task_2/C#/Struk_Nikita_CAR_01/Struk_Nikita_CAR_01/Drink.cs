@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Struk_Nikita_CAR_01
+﻿namespace Product
 {
-    public abstract class Drink
+    internal abstract class Drink
     {
         protected string drinkName; //Назва напою
         protected int cupSize; // Розмiр стаканчика
@@ -17,20 +11,20 @@ namespace Struk_Nikita_CAR_01
             cupSize = cupSize_;
             sugarTeaSpoonQuantity = sugarTeaSpoonQuantity_;
         }
-        
-        public string GetDrinkName()
+
+        protected string GetDrinkName()
         {
             var copyDrinkName = drinkName;
             return copyDrinkName;
         }
 
-        public int GetCupSize()
+        protected int GetCupSize()
         {
             var copyCupSize = cupSize;
             return copyCupSize;
         }
 
-        public int GetSugarTeaSpoonQuantity()
+        protected int GetSugarTeaSpoonQuantity()
         {
             var copySugarTeaSpoonQuantity = sugarTeaSpoonQuantity;
             return copySugarTeaSpoonQuantity;
@@ -38,7 +32,7 @@ namespace Struk_Nikita_CAR_01
         /**
          * Метод, що додає ложки цукру до напою.
          */
-        public void SugarAdding()
+        protected void SugarAdding()
         {
             var sugarSpoons = GetSugarTeaSpoonQuantity();
             if (sugarSpoons == 0) return;

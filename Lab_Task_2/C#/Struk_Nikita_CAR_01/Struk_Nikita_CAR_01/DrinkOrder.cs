@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Struk_Nikita_CAR_01;
-
-namespace Struk_Nikita_CAR_01
+﻿using Product;
+namespace UI
 {
     internal static class DrinkOrder
     {
@@ -25,14 +19,14 @@ namespace Struk_Nikita_CAR_01
                     drink = new Cacao(drinkName, cupSize, sugarSpoons);
                     break;
                 default:
-                    Console.WriteLine("Вибачте, ця варіант є недоступним. Спробуйте ще раз.");
+                    Console.WriteLine("Вибачте, ця варiант є недоступним. Спробуйте ще раз.");
                     return;
             }
 
             Console.WriteLine("Ваше замовлення");
             Console.WriteLine("-----------------------------------------------------------------");
             drink.OrderShow();
-            Console.WriteLine("Очікуйте на завершення приготування " + drinkName);
+            Console.WriteLine("Очiкуйте на завершення приготування " + drinkName);
             drink.Brewing();
         }
     }

@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Struk_Nikita_CAR_01
+﻿namespace UI
 {
-    internal class MainMenu
+    internal static class MainMenu
     {
         /**
          * Метод, що викликає основне меню.
-         * Є відправною точкою у взаємодії між користувачем та автоматом.
+         * Є вiдправною точкою у взаємодiї мiж користувачем та автоматом.
          */
         public static bool ShowMainMenu(int choice)
         {
@@ -18,31 +12,31 @@ namespace Struk_Nikita_CAR_01
             {
                 case 1:
                 {
-                    InputInformation.ChooseDrink();
+                    DrinkInputInformation.ChooseDrink();
                     return false;
                 }
                 case 2:
                 {
                     Console.WriteLine("-----------------------------------------------------------------");
-                    DisplayInformation.ShowCoffeeOptions();
+                    DisplayOptions.ShowCoffeeOptions();
                     Console.WriteLine("-----------------------------------------------------------------");
-                    DisplayInformation.ShowTeaOptions();
+                    DisplayOptions.ShowTeaOptions();
                     Console.WriteLine("-----------------------------------------------------------------");
-                    DisplayInformation.ShowCacaoOptions();
+                    DisplayOptions.ShowCacaoOptions();
                     Console.WriteLine("-----------------------------------------------------------------");
                     return false;
                 }
 
                 case 3:
                 {
-                    DisplayInformation.ShowInstructionsOptions();
+                    DisplayInstructions.ShowInstructionsOptions();
                     return false;
                 }
                 case 4:
                 {
 
-                    Console.WriteLine("Ви впевнені в тому, що бажаєте завершити роботу застосунку? \n 1 - Так; 0 - Ні \n");
-                    Console.WriteLine("Введіть варіант відповіді:");
+                    Console.WriteLine("Ви впевненi в тому, що бажаєте завершити роботу застосунку? \n 1 - Так; 0 - Нi \n");
+                    Console.WriteLine("Введiть варiант вiдповiдi:");
                     var quitChoice = Convert.ToInt32(Console.ReadLine());
                     switch (quitChoice)
                     {
@@ -51,13 +45,13 @@ namespace Struk_Nikita_CAR_01
                         case 1:
                             return true;
                         default:
-                            Console.WriteLine("Вибачте, ця варіант є недоступним. Спробуйте ще раз.");
+                            Console.WriteLine("Вибачте, ця варiант є недоступним. Спробуйте ще раз.");
                             return false;
                     }
                 }
                 default:
                 {
-                    Console.WriteLine("Вибачте, але цей вибір є недійсним, спробуйте ще раз.");
+                    Console.WriteLine("Вибачте, але цей вибiр є недiйсним, спробуйте ще раз.");
                     return false;
                 }
             }
