@@ -63,7 +63,7 @@
          */
         public static bool ChooseDrinkSubtype(int drinkTypeChoice)
         {
-            int drinkSubtypeChoice = Convert.ToInt32(Console.ReadLine());
+            var drinkSubtypeChoice = Convert.ToInt32(Console.ReadLine());
             var confirmation = AreYouSure();
             if (confirmation)
             {

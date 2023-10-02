@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Struk_Nikita_CAR_01.Program">
-    <Position X="13" Y="0.5" Width="1.5" />
+    <Position X="13" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
@@ -76,7 +76,7 @@
   <Class Name="UI.DrinkInputInformation">
     <Position X="17.5" Y="0.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQBAAAAAAAAEAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAABAAQBAAAAAAAAEAAAAAAAAABAAAAAA=</HashCode>
       <FileName>DrinkInputInformation.cs</FileName>
     </TypeIdentifier>
   </Class>

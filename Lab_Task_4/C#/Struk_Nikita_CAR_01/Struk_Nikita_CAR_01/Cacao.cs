@@ -7,6 +7,9 @@
         public Cacao(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) 
             : base(drinkName_, cupSize_, sugarTeaSpoonQuantity_)
         {
+            drinkName = drinkName_;
+            cupSize = cupSize_;
+            sugarTeaSpoonQuantity = sugarTeaSpoonQuantity_;
         }
         /**
          * Метод, що готує какао.

@@ -9,7 +9,7 @@ internal static class Program
         var res = false;
         while (!res)
         {
-            DisplayOptions.ShowOptionsToChooseFrom();
+            DisplayOptions.ShowMainMenuOptions();
             var choice = Convert.ToInt32(Console.ReadLine());
             res = MainMenu.ShowMainMenu(choice);
         }

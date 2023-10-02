@@ -5,7 +5,7 @@
         /**
          * Метод, що показує доступнi варiанти взаємодiї мiж користувачем та автоматом.
          */
-        public static void ShowOptionsToChooseFrom()
+        public static void ShowMainMenuOptions()
         {
             Console.WriteLine("\t Будь ласка, введiть з клавiатури число вiд 1 до 4.");
             Console.WriteLine("\t Доступнi варiанти:");
