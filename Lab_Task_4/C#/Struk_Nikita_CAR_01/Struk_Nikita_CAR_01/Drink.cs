@@ -5,6 +5,9 @@
         protected string drinkName; //Назва напою
         protected int cupSize; // Розмiр стаканчика
         protected int sugarTeaSpoonQuantity; //Кiлькiсть чайних ложок цукру.
+        
+        
+        
         protected Drink(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_)
         {
             drinkName = drinkName_;
@@ -39,6 +42,14 @@
             Console.WriteLine("Додаємо " + sugarSpoons + " чайних ложок цукру");
             Thread.Sleep(1000);
         }
+        
+        /**
+         * Метод, що готує напiй за введеними даними.
+         */
+        public abstract void Brewing();
+       
+        
+        
         /**
          * Метод, що виводить деталi замовлення.
          */
@@ -49,9 +60,5 @@
             Console.WriteLine("Об'єм стакану: " + GetCupSize());
             Console.WriteLine("Додано: " + GetSugarTeaSpoonQuantity() + "ложок цукру.");
         }
-        /**
-         * Метод, що готує напiй за введеними даними.
-         */
-        public abstract void Brewing();
     }
 }
