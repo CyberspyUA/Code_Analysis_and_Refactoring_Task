@@ -85,58 +85,68 @@
                 }
 
                 string drinkName;
-                if (drinkTypeChoice == 1 && drinkSubtypeChoice == 1)
+                switch (drinkTypeChoice)
                 {
-                    drinkName = "Еспрессо";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                    case 1:
+                        switch (drinkSubtypeChoice)
+                        {
+                            case 1:
+                                drinkName = "Еспрессо";
+                                break;
+                            case 2:
+                                drinkName = "Американо";
+                                break;
+                            case 3:
+                                drinkName = "Капучiно";
+                                break;
+                            default:
+                                throw new ArgumentException("Некоректний вибір напою.");
+                        }
+                        break;
+                    case 2:
+                        switch (drinkSubtypeChoice)
+                        {
+                            case 1:
+                                drinkName = "Чорний чай";
+                                break;
+                            case 2:
+                                drinkName = "Зелений чай";
+                                break;
+                            case 3:
+                                drinkName = "Червоний чай";
+                                break;
+                            default:
+                                throw new ArgumentException("Некоректний вибір напою.");
+                        }
+                        break;
+                    case 3:
+                        switch (drinkSubtypeChoice)
+                        {
+                            case 1:
+                                drinkName = "Звичайне какао";
+                                break;
+                            case 2:
+                                drinkName = "Пряне какао";
+                                break;
+                            case 3:
+                                drinkName = "Гарячий шоколад";
+                                break;
+                            default:
+                                throw new ArgumentException("Некоректний вибір напою.");
+                        }
+                        break;
+                    default:
+                        throw new ArgumentException("Некоректний вибір напою.");
                 }
-                else if (drinkTypeChoice == 1 && drinkSubtypeChoice == 2)
-                {
-                    drinkName = "Американо";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 1 && drinkSubtypeChoice == 3)
-                {
-                    drinkName = "Капучiно";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 2 && drinkSubtypeChoice == 1)
-                {
-                    drinkName = "Чорний чай";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 2 && drinkSubtypeChoice == 2)
-                {
-                    drinkName = "Зелений чай";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 2 && drinkSubtypeChoice == 3)
-                {
-                    drinkName = "Червоний чай";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 3 && drinkSubtypeChoice == 1)
-                {
-                    drinkName = "Звичайне какао";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 3 && drinkSubtypeChoice == 2)
-                {
-                    drinkName = "Пряне какао";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 3 && drinkSubtypeChoice == 3)
-                {
-                    drinkName = "Гарячий шоколад";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-
+                DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 return true;
             }
             Console.WriteLine("Повторiть свiй вибiр.");
             return false;
         }
-
+        /**
+         * Метод, що перевіряє правильність введеного розміру стакану.
+         */
         public static bool IsCupSizeValid(int cupSize)
         {
             return cupSize is 100 or 200 or 300;
