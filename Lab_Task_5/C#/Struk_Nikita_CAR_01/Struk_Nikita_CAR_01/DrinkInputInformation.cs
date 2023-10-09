@@ -2,6 +2,10 @@
 {
     internal static class DrinkInputInformation
     {
+        /**
+         * Метод, що пропонує користувачевi цукор.
+         * Якщо користувач згоден, викликається метод CalculateSugarSpoonsQuantity().
+         */
         public static bool IsSugarNeeded()
         {
             Console.WriteLine("Вам потрiбен цукор?");
@@ -210,10 +214,7 @@
                     }
             }
         }
-        /**
-         * Метод, що пропонує користувачевi цукор.
-         * Якщо користувач згоден, викликається метод CalculateSugarSpoonsQuantity().
-         */
+        
         
     }
 }
