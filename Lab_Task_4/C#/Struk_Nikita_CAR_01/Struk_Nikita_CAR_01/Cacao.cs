@@ -1,16 +1,49 @@
 ﻿namespace Product
 {
     using System;
-
-    internal class Cacao : Drink
+    internal interface ICacao
     {
-        protected int cacaoPowderWeightinGramms; //Вага какао порошку у грамах.
+        void ShowCacaoFacts();
+        string GetDrinkName();
+        int GetCupSize();
+        int GetSugarTeaSpoonQuantity();
+        void SugarAdding();
+        void Brewing();
+        void OrderShow();
+    }
+    internal class Cacao : Drink, ICacao
+    {
         public Cacao(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) 
             : base(drinkName_, cupSize_, sugarTeaSpoonQuantity_)
         {
             drinkName = drinkName_;
             cupSize = cupSize_;
             sugarTeaSpoonQuantity = sugarTeaSpoonQuantity_;
+        }
+        public string GetDrinkName()
+        {
+            var copyDrinkName = drinkName;
+            return copyDrinkName;
+        }
+
+        public int GetCupSize()
+        {
+            var copyCupSize = cupSize;
+            return copyCupSize;
+        }
+
+        public int GetSugarTeaSpoonQuantity()
+        {
+            var copySugarTeaSpoonQuantity = sugarTeaSpoonQuantity;
+            return copySugarTeaSpoonQuantity;
+        }
+
+        public void SugarAdding()
+        {
+            var sugarSpoons = GetSugarTeaSpoonQuantity();
+            if (sugarSpoons == 0) return;
+            Console.WriteLine("Додаємо " + sugarSpoons + " чайних ложок цукру");
+            Thread.Sleep(1000);
         }
         /**
          * Метод, що готує какао.
@@ -30,7 +63,7 @@
         /**
         * Метод, що виводить цікаві факти про какао.
         */
-        protected static void ShowCocoaFacts()
+        public void ShowCacaoFacts()
         {
             Console.WriteLine("Цікаві факти про какао: ");
             Console.WriteLine("1) Какао-дереву потрібно п'ять років, щоб дати перші какао-боби (стручки).");

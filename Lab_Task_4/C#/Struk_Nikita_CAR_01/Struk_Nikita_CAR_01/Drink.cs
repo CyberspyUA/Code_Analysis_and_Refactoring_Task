@@ -1,13 +1,20 @@
-﻿namespace Product
+﻿using System;
+using System.Threading;
+
+namespace Product
 {
-    internal abstract class Drink
+    internal interface IDrink
+    {
+        void Brewing();
+        void OrderShow();
+    }
+
+    internal abstract class Drink : IDrink
     {
         protected string drinkName; //Назва напою
         protected int cupSize; // Розмiр стаканчика
         protected int sugarTeaSpoonQuantity; //Кiлькiсть чайних ложок цукру.
-        
-        
-        
+
         protected Drink(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_)
         {
             drinkName = drinkName_;
@@ -33,8 +40,8 @@
             return copySugarTeaSpoonQuantity;
         }
         /**
-         * Метод, що додає ложки цукру до напою.
-         */
+ * Метод, що додає ложки цукру до напою.
+ */
         protected void SugarAdding()
         {
             var sugarSpoons = GetSugarTeaSpoonQuantity();
@@ -42,14 +49,12 @@
             Console.WriteLine("Додаємо " + sugarSpoons + " чайних ложок цукру");
             Thread.Sleep(1000);
         }
-        
+
         /**
          * Метод, що готує напiй за введеними даними.
          */
         public abstract void Brewing();
-       
-        
-        
+
         /**
          * Метод, що виводить деталi замовлення.
          */
@@ -62,3 +67,7 @@
         }
     }
 }
+
+
+
+
