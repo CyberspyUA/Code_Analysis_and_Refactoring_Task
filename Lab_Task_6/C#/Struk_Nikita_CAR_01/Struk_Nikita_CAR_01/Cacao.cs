@@ -20,7 +20,7 @@
             Thread.Sleep(2000);
             Console.WriteLine("Наливаємо какао у стакан.");
             SugarAdding();
-            Console.WriteLine("Ваш " + GetDrinkName() + " готовий! Смачного!");
+            Console.WriteLine("Ваш " + DrinkName + " готовий! Смачного!");
             Console.WriteLine("-----------------------------------------------------------");
         }
     }

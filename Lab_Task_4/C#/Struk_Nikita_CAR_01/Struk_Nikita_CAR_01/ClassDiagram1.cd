@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Product.Cacao">
-    <Position X="6.5" Y="4.5" Width="1.5" />
+    <Position X="6.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAACAAAIAAABCAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>Cacao.cs</FileName>
@@ -9,7 +9,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Product.Coffee">
-    <Position X="8.75" Y="4.5" Width="1.5" />
+    <Position X="8.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAACCIAIAAADCAAAAAAAAAAAAAAgAAAIAAAAAA=</HashCode>
       <FileName>Coffee.cs</FileName>
@@ -24,7 +24,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Product.Tea">
-    <Position X="11.25" Y="4.5" Width="1.5" />
+    <Position X="11.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACABAIAAABCAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>Tea.cs</FileName>
