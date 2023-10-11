@@ -38,7 +38,7 @@
         {
             Console.WriteLine(DrinkName);
             Console.WriteLine("Об'єм стакану: " + CupSize);
-            Console.WriteLine("Додано: " + GetSugarTeaSpoonQuantity() + "ложок цукру.");
+            Console.WriteLine("Додано: " + GetSugarTeaSpoonQuantity() + " ложок цукру.");
         }
         /**
          * Метод, що готує напiй за введеними даними.

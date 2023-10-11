@@ -1,6 +1,7 @@
 ﻿using Product;
 using System.Collections;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 
 namespace UI
@@ -28,17 +29,17 @@ namespace UI
             get => (int)completedOrders!;
             set => completedOrders = value;
         }
-        public static void RemoveElementAtKey(Int32 key) // Видалення елементу за ключем у хеш-таблицi.
+        public static void RemoveElementAtKey(int key) // Видалення елементу за ключем у хеш-таблицi.
         {
             if (drinkOrders != null && drinkOrders.ContainsKey(key))
                 drinkOrders.Remove(key);
         }
 
-        public static void AddElement(Int32 key, Drink drink) // Додання нового елементу до хеш-таблицi.
+        public static void AddElement(int key, Drink drink) // Додання нового елементу до хеш-таблицi.
         {
             drinkOrders?.Add(key, drink);
         }
-        public static Drink GetElementAtKey(Int32 key) // Отримати значення за вiдповiдним ключем.
+        public static Drink GetElementAtKey(int key) // Отримати значення за вiдповiдним ключем.
         {
             if(drinkOrders != null && drinkOrders.ContainsKey(key))
                 return (Drink)drinkOrders[key];
@@ -64,9 +65,11 @@ namespace UI
                     Console.WriteLine("Вибачте, ця варiант є недоступним. Спробуйте ще раз.");
                     return;
             }
-            AddElement(CompletedOrders, drink);
+            DrinkOrdersHashtable ??= new Hashtable();
+            AddElement(CompletedOrders, drink); //Додати новий елемент до хеш-таблиці. Використовуємо CompletedOrders як ключ, а drink як значення.
             CompletedOrders++;
-            if (CompletedOrders < TotalOrders ) return; // Перевiрка умови на кiлькiсть незавершених замовлень
+            // Перевiрка умови на кiлькiсть незавершених замовлень,
+            if (CompletedOrders < TotalOrders ) return; // якщо не всі замовлення оформлені - продовжуємо отримувати дані від користувача.
             ShowOrderDetails();
             BrewOrder();
 
@@ -81,12 +84,9 @@ namespace UI
             Console.WriteLine("-----------------------------------------------------------------");
             for (var indHashtable = 0; indHashtable < TotalOrders; indHashtable++)
             {
-                if (drinkOrders != null)
-                {
-                    Drink? drink = drinkOrders[indHashtable] as Drink;
-                    if (drink == null) continue;
-                    drink.OrderShow();
-                }
+                Drink? drink = GetElementAtKey(indHashtable); // Отримати значення елементу за ключем.
+                
+                drink.OrderShow();
                 Console.WriteLine("");
             }
             Console.WriteLine("-----------------------------------------------------------------");
