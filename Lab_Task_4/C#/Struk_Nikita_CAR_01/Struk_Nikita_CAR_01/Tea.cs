@@ -1,10 +1,19 @@
 ﻿namespace Product
 {
     using System;
-
-    internal class Tea : Drink
+    internal interface ITea
     {
-        protected int teaLeafsWeightinGramms; //Вага листів чаю у грамах.
+        void ShowTeaFacts();
+        string GetDrinkName();
+        int GetCupSize();
+        int GetSugarTeaSpoonQuantity();
+        void SugarAdding();
+        void Brewing();
+        void OrderShow();
+    }
+    internal class Tea : Drink, ITea
+    {
+        
         public Tea(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_) 
             : base(drinkName_, cupSize_, sugarTeaSpoonQuantity_)
         {
@@ -12,6 +21,32 @@
             cupSize = cupSize_;
             sugarTeaSpoonQuantity = sugarTeaSpoonQuantity_;
         }
+        public string GetDrinkName()
+        {
+            var copyDrinkName = drinkName;
+            return copyDrinkName;
+        }
+
+        public int GetCupSize()
+        {
+            var copyCupSize = cupSize;
+            return copyCupSize;
+        }
+
+        public int GetSugarTeaSpoonQuantity()
+        {
+            var copySugarTeaSpoonQuantity = sugarTeaSpoonQuantity;
+            return copySugarTeaSpoonQuantity;
+        }
+
+        public void SugarAdding()
+        {
+            var sugarSpoons = GetSugarTeaSpoonQuantity();
+            if (sugarSpoons == 0) return;
+            Console.WriteLine("Додаємо " + sugarSpoons + " чайних ложок цукру");
+            Thread.Sleep(1000);
+        }
+
         /**
          * Метод, що готує чай.
          */
@@ -32,7 +67,7 @@
         /**
          * Метод, що виводить цікаві факти про чай.
          */
-        protected static void ShowTeaFacts()
+        public void ShowTeaFacts()
         {
             Console.WriteLine("Цікаві факти про чай:");
             Console.WriteLine("1) Для приготування одного фунта чаю потрібно 2000 чайних листків.");

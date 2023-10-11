@@ -1,36 +1,23 @@
-﻿using System.Collections;
-
-namespace Product
+﻿namespace Product
 {
     internal abstract class Drink
     {
-        protected string drinkName; //Назва напою
-        protected int cupSize; // Розмiр стаканчика
-        protected int sugarTeaSpoonQuantity; //Кiлькiсть чайних ложок цукру
-        
-
-        protected Drink(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_)
+        protected Drink(string drinkName, int cupSize, int sugarTeaSpoonQuantity)
         {
-            drinkName = drinkName_;
-            cupSize = cupSize_;
-            sugarTeaSpoonQuantity = sugarTeaSpoonQuantity_;
+            DrinkName = drinkName;
+            CupSize = cupSize;
+            SugarTeaSpoonsQuantity = sugarTeaSpoonQuantity;
         }
 
-        protected string GetDrinkName()
-        {
-            var copyDrinkName = drinkName;
-            return copyDrinkName;
-        }
+        public string DrinkName { get; set; }
 
-        protected int GetCupSize()
-        {
-            var copyCupSize = cupSize;
-            return copyCupSize;
-        }
+        public int CupSize { get; set; }
+
+        public int SugarTeaSpoonsQuantity { get; set; }
 
         protected int GetSugarTeaSpoonQuantity()
         {
-            var copySugarTeaSpoonQuantity = sugarTeaSpoonQuantity;
+            var copySugarTeaSpoonQuantity = SugarTeaSpoonsQuantity;
             return copySugarTeaSpoonQuantity;
         }
         /**
@@ -49,8 +36,8 @@ namespace Product
 
         public void OrderShow()
         {
-            Console.WriteLine(GetDrinkName());
-            Console.WriteLine("Об'єм стакану: " + GetCupSize());
+            Console.WriteLine(DrinkName);
+            Console.WriteLine("Об'єм стакану: " + CupSize);
             Console.WriteLine("Додано: " + GetSugarTeaSpoonQuantity() + "ложок цукру.");
         }
         /**

@@ -23,7 +23,7 @@
             Thread.Sleep(3000);
             Console.WriteLine("Наливаємо чай у стакан.");
             SugarAdding();
-            Console.WriteLine("Ваш " + GetDrinkName() + " готовий! Смачного!");
+            Console.WriteLine("Ваш " + DrinkName + " готовий! Смачного!");
             Console.WriteLine("-----------------------------------------------------------");
         }
 
