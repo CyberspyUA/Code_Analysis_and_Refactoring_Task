@@ -20,8 +20,7 @@
         public static int CalculateSugarSpoonsQuantity()
         {
             var teaSpoon = 1;
-            var isThatEnough = false;
-            while (!isThatEnough)
+            while (true)
             {
                 Console.WriteLine("До напою додано " + teaSpoon + " чайних ложок цукру.");
                 Console.WriteLine("Бiльше цукру?");
@@ -33,10 +32,9 @@
                 }
                 else
                 {
-                    isThatEnough = true;
+                    break;
                 }
             }
-
             return teaSpoon;
         }
     }

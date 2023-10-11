@@ -1,10 +1,14 @@
-﻿namespace Product
+﻿using System.Collections;
+
+namespace Product
 {
     internal abstract class Drink
     {
         protected string drinkName; //Назва напою
         protected int cupSize; // Розмiр стаканчика
-        protected int sugarTeaSpoonQuantity; //Кiлькiсть чайних ложок цукру.
+        protected int sugarTeaSpoonQuantity; //Кiлькiсть чайних ложок цукру
+        
+
         protected Drink(string drinkName_, int cupSize_, int sugarTeaSpoonQuantity_)
         {
             drinkName = drinkName_;

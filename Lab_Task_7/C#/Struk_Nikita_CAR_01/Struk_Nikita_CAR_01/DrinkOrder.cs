@@ -3,7 +3,7 @@ namespace UI
 {
     internal static class DrinkOrder
     {
-        public static void DisplayOrderAndBrewDrink(int drinkTypeChoice, string drinkName, int cupSize, int sugarSpoons)
+        public static void OrderPreparation(int drinkTypeChoice, string drinkName, int cupSize, int sugarSpoons)
         {
             Drink drink;
 
@@ -22,11 +22,26 @@ namespace UI
                     Console.WriteLine("Вибачте, ця варiант є недоступним. Спробуйте ще раз.");
                     return;
             }
-
+            ShowOrderDetails(drink, drinkName);
+            BrewOrder(drink);
+        }
+        /**
+         * Метод, що приховує делегування методу OrderShow класу Drink.
+         * Виводить повну інформацію щодо замовлення.
+         */
+        public static void ShowOrderDetails(Drink drink, string drinkName)
+        {
             Console.WriteLine("Ваше замовлення");
             Console.WriteLine("-----------------------------------------------------------------");
             drink.OrderShow();
             Console.WriteLine("Очiкуйте на завершення приготування " + drinkName);
+        }
+        /**
+         * Метод, що приховує делегування методу BrewOrder класу Drink.
+         * Виконує процес приготування напою.
+         */
+        public static void BrewOrder(Drink drink)
+        {
             drink.Brewing();
         }
     }

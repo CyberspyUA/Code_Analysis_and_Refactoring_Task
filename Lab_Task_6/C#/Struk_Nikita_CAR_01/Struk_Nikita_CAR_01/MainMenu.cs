@@ -1,7 +1,16 @@
-﻿namespace UI
+﻿using Product;
+
+namespace UI
 {
     internal static class MainMenu
     {
+        /**
+         * Метод, що бере метод із класу-обгортки MainMenuExtensions
+         */
+        private static void ShowOptions()
+        {
+            MainMenuExtensions.DisplayOptions();
+        }
         /**
          * Метод, що викликає основне меню.
          * Є вiдправною точкою у взаємодiї мiж користувачем та автоматом.
@@ -12,24 +21,24 @@
             {
                 case 1:
                 {
-                    DrinkInputInformation.ChooseDrink();
+                    DisplayInfo.DrinksQuantityInOrder();
+                    Order.TotalOrders =  DrinkInputInformation.InputDrinksQuantity();
+
+                    while (Order.CompletedOrders < Order.TotalOrders)
+                    {
+                        DrinkInputInformation.ChooseDrink();
+                    }
                     return false;
                 }
                 case 2:
                 {
-                    Console.WriteLine("-----------------------------------------------------------------");
-                    DisplayOptions.ShowCoffeeOptions();
-                    Console.WriteLine("-----------------------------------------------------------------");
-                    DisplayOptions.ShowTeaOptions();
-                    Console.WriteLine("-----------------------------------------------------------------");
-                    DisplayOptions.ShowCacaoOptions();
-                    Console.WriteLine("-----------------------------------------------------------------");
+                    ShowOptions();
                     return false;
                 }
 
                 case 3:
                 {
-                    DisplayInstructions.ShowInstructionsOptions();
+                    DisplayInfo.ShowInstructionsOptions();
                     return false;
                 }
                 case 4:
@@ -55,6 +64,22 @@
                     return false;
                 }
             }
+        }
+    }
+    public static class MainMenuExtensions
+    {
+        /**
+         * Метод, що викликає доступні вибори напоїв на даний момент.
+         */
+        public static void DisplayOptions()
+        {
+            Console.WriteLine("-----------------------------------------------------------------");
+            DisplayInfo.ShowCoffeeOptions();
+            Console.WriteLine("-----------------------------------------------------------------");
+            DisplayInfo.ShowTeaOptions();
+            Console.WriteLine("-----------------------------------------------------------------");
+            DisplayInfo.ShowCacaoOptions();
+            Console.WriteLine("-----------------------------------------------------------------");
         }
     }
 }

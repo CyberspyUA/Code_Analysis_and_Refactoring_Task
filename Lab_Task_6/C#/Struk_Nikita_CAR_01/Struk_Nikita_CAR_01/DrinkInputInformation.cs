@@ -1,7 +1,50 @@
-﻿namespace UI
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace UI
 {
     internal static class DrinkInputInformation
     {
+        public static Int32 InputDrinksQuantity()
+        {
+            var drinksQuantity = Convert.ToInt32(Console.ReadLine());
+            return drinksQuantity;
+        }
+        /**
+         * Метод, що пропонує користувачевi цукор.
+         * Якщо користувач згоден, викликається метод CalculateSugarSpoonsQuantity().
+         */
+        public static bool IsSugarNeeded()
+        {
+            Console.WriteLine("Вам потрiбен цукор?");
+            Console.WriteLine("1 - Так; 0 - Нi");
+            var isSugarNeededConfirmation = Convert.ToInt32(Console.ReadLine());
+            var confirmation = (isSugarNeededConfirmation != 0);
+            return confirmation;
+        }
+        /**
+         * Метод, що викликається у разi, якщо користувач бажає цукру.
+         * Додає певну кiлькiсть ложок цукру
+         */
+        public static int CalculateSugarSpoonsQuantity()
+        {
+            var teaSpoon = 1;
+            while (true)
+            {
+                Console.WriteLine("До напою додано " + teaSpoon + " чайних ложок цукру.");
+                Console.WriteLine("Бiльше цукру?");
+                Console.WriteLine("1 - Так; 0 - Нi");
+                var moreSugarChoice = Convert.ToInt32(Console.ReadLine());
+                if (moreSugarChoice == 1)
+                {
+                    teaSpoon++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return teaSpoon;
+        }
         public static bool AreYouSure()
         {
             Console.WriteLine("Ви впевненi у цьому?");
@@ -16,9 +59,9 @@
         public static bool ChooseDrink()
         {
             Console.WriteLine("Оберiть бажаний напiй. На зараз, ми можемо запропонувати такi напої:");
-            DisplayOptions.ShowCoffeeOptions();
-            DisplayOptions.ShowTeaOptions();
-            DisplayOptions.ShowCacaoOptions();
+            DisplayInfo.ShowCoffeeOptions();
+            DisplayInfo.ShowTeaOptions();
+            DisplayInfo.ShowCacaoOptions();
             Console.WriteLine("1 - Кава, 2 - Чай, 3 - Какао");
             var drinkChoice = Convert.ToInt32(Console.ReadLine());
             switch (drinkChoice)
@@ -26,7 +69,7 @@
                 case 1:
                     {
                         Console.WriteLine("Ви обрали каву. Яку каву ви бажаєте?");
-                        DisplayOptions.ShowCoffeeOptions();
+                        DisplayInfo.ShowCoffeeOptions();
                         var coffeeChoiceConfirmation = false;
                         while (!coffeeChoiceConfirmation)
                             coffeeChoiceConfirmation = ChooseDrinkSubtype(drinkChoice);
@@ -35,7 +78,7 @@
                 case 2:
                     {
                         Console.WriteLine("Ви обрали чай. Який чай ви бажаєте?");
-                        DisplayOptions.ShowTeaOptions();
+                        DisplayInfo.ShowTeaOptions();
                         var teaChoiceConfirmation = false;
                         while (!teaChoiceConfirmation)
                             teaChoiceConfirmation = ChooseDrinkSubtype(drinkChoice);
@@ -44,7 +87,7 @@
                 case 3:
                     {
                         Console.WriteLine("Ви обрали какао. Яке какао ви бажаєте?");
-                        DisplayOptions.ShowCacaoOptions();
+                        DisplayInfo.ShowCacaoOptions();
                         var cacaoChoiceConfirmation = false;
                         while (!cacaoChoiceConfirmation)
                             cacaoChoiceConfirmation = ChooseDrinkSubtype(drinkChoice);
@@ -67,75 +110,90 @@
             var confirmation = AreYouSure();
             if (confirmation)
             {
-                DisplayOptions.ShowCupSizeOptions();
+                DisplayInfo.ShowCupSizeOptions();
                 int cupSize;
                 while (true)
                 {
                     cupSize = ChooseCupSize();
-                    if (cupSize is 100 or 200 or 300)
+                    if (IsCupSizeValid(cupSize))
                     {
                         break;
                     }
                 }
-                var isSugarNeeded = SugarSuggestion.IsSugarNeeded();
+                string drinkName;
+                switch (drinkTypeChoice)
+                {
+                    case 1:
+                        switch (drinkSubtypeChoice)
+                        {
+                            case 1:
+                                drinkName = "Еспрессо";
+                                break;
+                            case 2:
+                                drinkName = "Американо";
+                                break;
+                            case 3:
+                                drinkName = "Капучiно";
+                                break;
+                            default:
+                                throw new ArgumentException("Некоректний вибір напою.");
+                        }
+                        break;
+                    case 2:
+                        switch (drinkSubtypeChoice)
+                        {
+                            case 1:
+                                drinkName = "Чорний чай";
+                                break;
+                            case 2:
+                                drinkName = "Зелений чай";
+                                break;
+                            case 3:
+                                drinkName = "Червоний чай";
+                                break;
+                            default:
+                                throw new ArgumentException("Некоректний вибір напою.");
+                        }
+                        break;
+                    case 3:
+                        switch (drinkSubtypeChoice)
+                        {
+                            case 1:
+                                drinkName = "Звичайне какао";
+                                break;
+                            case 2:
+                                drinkName = "Пряне какао";
+                                break;
+                            case 3:
+                                drinkName = "Гарячий шоколад";
+                                break;
+                            default:
+                                throw new ArgumentException("Некоректний вибір напою.");
+                        }
+                        break;
+                    default:
+                        throw new ArgumentException("Некоректний вибір напою.");
+                }
+                var isSugarNeeded = IsSugarNeeded();
                 var sugarSpoons = 0;
                 if (isSugarNeeded)
                 {
-                    sugarSpoons = SugarSuggestion.CalculateSugarSpoonsQuantity();
+                    sugarSpoons = CalculateSugarSpoonsQuantity();
                 }
-
-                string drinkName;
-                if (drinkTypeChoice == 1 && drinkSubtypeChoice == 1)
-                {
-                    drinkName = "Еспрессо";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 1 && drinkSubtypeChoice == 2)
-                {
-                    drinkName = "Американо";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 1 && drinkSubtypeChoice == 3)
-                {
-                    drinkName = "Капучiно";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 2 && drinkSubtypeChoice == 1)
-                {
-                    drinkName = "Чорний чай";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 2 && drinkSubtypeChoice == 2)
-                {
-                    drinkName = "Зелений чай";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 2 && drinkSubtypeChoice == 3)
-                {
-                    drinkName = "Червоний чай";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 3 && drinkSubtypeChoice == 1)
-                {
-                    drinkName = "Звичайне какао";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 3 && drinkSubtypeChoice == 2)
-                {
-                    drinkName = "Пряне какао";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-                else if (drinkTypeChoice == 3 && drinkSubtypeChoice == 3)
-                {
-                    drinkName = "Гарячий шоколад";
-                    DrinkOrder.DisplayOrderAndBrewDrink(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                }
-
+                Order.OrderPreparation(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 return true;
             }
             Console.WriteLine("Повторiть свiй вибiр.");
             return false;
         }
+        /**
+         * Метод, що перевіряє правильність введеного розміру стакану.
+         */
+        public static bool IsCupSizeValid(int cupSize)
+        {
+            return cupSize is 100 or 200 or 300;
+        }
+
         /**
          * Метод, що пропонує обрати розмiр стаканчика серед запропонованих варiантiв.
          */
@@ -163,5 +221,7 @@
                     }
             }
         }
+        
+        
     }
 }
