@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Academy\\Code analysis and refactoring\\Lab_Task_5\\C#\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01.csproj": {}
+    "D:\\Projects\\Academy\\Code_Analysis_and_Refactoring\\Code_Analysis_and_Refactoring_Task\\Lab_Task_5\\C#\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\Academy\\Code analysis and refactoring\\Lab_Task_5\\C#\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01.csproj": {
+    "D:\\Projects\\Academy\\Code_Analysis_and_Refactoring\\Code_Analysis_and_Refactoring_Task\\Lab_Task_5\\C#\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Academy\\Code analysis and refactoring\\Lab_Task_5\\C#\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01.csproj",
+        "projectUniqueName": "D:\\Projects\\Academy\\Code_Analysis_and_Refactoring\\Code_Analysis_and_Refactoring_Task\\Lab_Task_5\\C#\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01.csproj",
         "projectName": "Struk_Nikita_CAR_01",
-        "projectPath": "D:\\Projects\\Academy\\Code analysis and refactoring\\Lab_Task_5\\C#\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01.csproj",
+        "projectPath": "D:\\Projects\\Academy\\Code_Analysis_and_Refactoring\\Code_Analysis_and_Refactoring_Task\\Lab_Task_5\\C#\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01.csproj",
         "packagesPath": "C:\\Users\\Nikita Struk (main)\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Academy\\Code analysis and refactoring\\Lab_Task_5\\C#\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01\\obj\\",
+        "outputPath": "D:\\Projects\\Academy\\Code_Analysis_and_Refactoring\\Code_Analysis_and_Refactoring_Task\\Lab_Task_5\\C#\\Struk_Nikita_CAR_01\\Struk_Nikita_CAR_01\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,8 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "c:\\program files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {}
         },
         "frameworks": {
           "net6.0": {
@@ -60,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
