@@ -4,6 +4,12 @@ namespace Product
 {
     public class DrinkData
     {
+        public DrinkData(string drinkNameInput, int cupSizeInput, int sugarSpoonsInput)
+        {
+            DrinkName = drinkNameInput;
+            CupSize = cupSizeInput;
+            SugarTeaSpoonsQuantity = sugarSpoonsInput;
+        }
         protected string drinkName;
         protected int cupSize;
         protected int sugarTeaSpoonQuantity;
@@ -46,14 +52,14 @@ namespace Product
             return data.DrinkName;
         }
 
-        public int GetCupSize ()
+        public int GetCupSize()
         {
             return data.CupSize;
         }
 
         public int GetSugarTeaSpoonsQuantity()
         {
-           return data.SugarTeaSpoonsQuantity;
+            return data.SugarTeaSpoonsQuantity;
         }
 
         public void SetDrinkName(string drinkName)

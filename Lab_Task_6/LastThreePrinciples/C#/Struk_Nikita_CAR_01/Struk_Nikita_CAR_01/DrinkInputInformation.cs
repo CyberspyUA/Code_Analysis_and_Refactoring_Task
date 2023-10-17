@@ -180,7 +180,7 @@ namespace UI
                 {
                     sugarSpoons = CalculateSugarSpoonsQuantity();
                 }
-                Order.OrderPreparation(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                OrderPreparation.Preparation(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
                 return true;
             }
             Console.WriteLine("Повторiть свiй вибiр.");

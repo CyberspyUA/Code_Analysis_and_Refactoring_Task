@@ -98,7 +98,7 @@
          */
         public static bool ChooseDrinkSubtype(int drinkTypeChoice)
         {
-            int drinkSubtypeChoice = Convert.ToInt32(Console.ReadLine());
+            var drinkSubtypeChoice = Convert.ToInt32(Console.ReadLine());
             var confirmation = AreYouSure();
             if (confirmation)
             {
@@ -118,63 +118,70 @@
                 {
                     sugarSpoons = CalculateSugarSpoonsQuantity();
                 }
+                string drinkName = null;
+                    switch (drinkTypeChoice)
+                    {
+                        case 1:
+                            switch (drinkSubtypeChoice)
+                            {
+                                case 1:
+                                    drinkName = "Еспрессо";
+                                    break;
+                                case 2:
+                                    drinkName = "Американо";
+                                    break;
+                                case 3:
+                                    drinkName = "Капучiно";
+                                    break;
+                                default:
+                                Console.WriteLine("Некоректний вибір напою.");
+                                break;
+                        }
+                            break;
+                        case 2:
+                            switch (drinkSubtypeChoice)
+                            {
+                                case 1:
+                                    drinkName = "Чорний чай";
+                                    break;
+                                case 2:
+                                    drinkName = "Зелений чай";
+                                    break;
+                                case 3:
+                                    drinkName = "Червоний чай";
+                                    break;
+                                default:
+                                Console.WriteLine("Некоректний вибір напою.");
+                                break;
+                        }
+                            break;
+                        case 3:
+                            switch (drinkSubtypeChoice)
+                            {
+                                case 1:
+                                    drinkName = "Звичайне какао";
+                                    break;
+                                case 2:
+                                    drinkName = "Пряне какао";
+                                    break;
+                                case 3:
+                                    drinkName = "Гарячий шоколад";
+                                    break;
+                                default:
+                                Console.WriteLine("Некоректний вибір напою.");
+                                break;
+                        }
+                            break;
+                        default:
+                            Console.WriteLine("Некоректний вибір напою.");
+                            break;
+                    }
 
-                string drinkName;
-                switch (drinkTypeChoice)
-                {
-                    case 1:
-                        switch (drinkSubtypeChoice)
-                        {
-                            case 1:
-                                drinkName = "Еспрессо";
-                                break;
-                            case 2:
-                                drinkName = "Американо";
-                                break;
-                            case 3:
-                                drinkName = "Капучiно";
-                                break;
-                            default:
-                                throw new ArgumentException("Некоректний вибір напою.");
-                        }
-                        break;
-                    case 2:
-                        switch (drinkSubtypeChoice)
-                        {
-                            case 1:
-                                drinkName = "Чорний чай";
-                                break;
-                            case 2:
-                                drinkName = "Зелений чай";
-                                break;
-                            case 3:
-                                drinkName = "Червоний чай";
-                                break;
-                            default:
-                                throw new ArgumentException("Некоректний вибір напою.");
-                        }
-                        break;
-                    case 3:
-                        switch (drinkSubtypeChoice)
-                        {
-                            case 1:
-                                drinkName = "Звичайне какао";
-                                break;
-                            case 2:
-                                drinkName = "Пряне какао";
-                                break;
-                            case 3:
-                                drinkName = "Гарячий шоколад";
-                                break;
-                            default:
-                                throw new ArgumentException("Некоректний вибір напою.");
-                        }
-                        break;
-                    default:
-                        throw new ArgumentException("Некоректний вибір напою.");
+                    if (drinkName != null)
+                    {
+                        DrinkOrder.OrderPreparation(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
+                        return true;
                 }
-                DrinkOrder.OrderPreparation(drinkTypeChoice, drinkName, cupSize, sugarSpoons);
-                return true;
             }
             Console.WriteLine("Повторiть свiй вибiр.");
             return false;

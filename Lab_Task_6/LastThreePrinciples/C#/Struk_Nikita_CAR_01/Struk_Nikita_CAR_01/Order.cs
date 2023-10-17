@@ -42,9 +42,9 @@ namespace UI
 
         public static void AddElement(Drink drink) // Додання нового елементу до списку.
         {
-            Drinks.Add(drink);   
+            Drinks.Add(drink);
         }
-        
+
         public static void OrderPreparation(int drinkTypeChoice, string drinkName, int cupSize, int sugarSpoons)
         {
             Drink drink;
@@ -69,12 +69,12 @@ namespace UI
                     Console.WriteLine("Вибачте, ця варiант є недоступним. Спробуйте ще раз.");
                     return;
             }
-            if(Drinks == null)
-            Drinks = new List<Drink>();
+            if (Drinks == null)
+                Drinks = new List<Drink>();
             AddElement(drink); //Додати новий елемент до списку. Використовуємо CompletedOrders як ключ, а drink як значення.
             CompletedOrders++;
             // Перевiрка умови на кiлькiсть незавершених замовлень,
-            if (CompletedOrders < TotalOrders ) return; // якщо не всі замовлення оформлені - продовжуємо отримувати дані від користувача.
+            if (CompletedOrders < TotalOrders) return; // якщо не всі замовлення оформлені - продовжуємо отримувати дані від користувача.
             ShowOrderDetails();
             BrewOrder();
 
@@ -87,7 +87,7 @@ namespace UI
         {
             Console.WriteLine("Ваше замовлення");
             Console.WriteLine("-----------------------------------------------------------------");
-            foreach(Drink drink in drinks)
+            foreach (Drink drink in drinks)
             {
                 drink.OrderShow();
                 Console.WriteLine("");

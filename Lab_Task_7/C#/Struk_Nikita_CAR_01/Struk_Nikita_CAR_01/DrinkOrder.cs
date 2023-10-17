@@ -22,19 +22,20 @@ namespace UI
                     Console.WriteLine("Вибачте, ця варiант є недоступним. Спробуйте ще раз.");
                     return;
             }
-            ShowOrderDetails(drink, drinkName);
+            ShowOrderDetails(drink);
             BrewOrder(drink);
         }
         /**
          * Метод, що приховує делегування методу OrderShow класу Drink.
          * Виводить повну інформацію щодо замовлення.
          */
-        public static void ShowOrderDetails(Drink drink, string drinkName)
+        public static void ShowOrderDetails(Drink drink)
         {
             Console.WriteLine("Ваше замовлення");
             Console.WriteLine("-----------------------------------------------------------------");
             drink.OrderShow();
-            Console.WriteLine("Очiкуйте на завершення приготування " + drinkName);
+            Console.WriteLine("Очiкуйте на завершення приготування " + drink.GetDrinkName());
+            
         }
         /**
          * Метод, що приховує делегування методу BrewOrder класу Drink.

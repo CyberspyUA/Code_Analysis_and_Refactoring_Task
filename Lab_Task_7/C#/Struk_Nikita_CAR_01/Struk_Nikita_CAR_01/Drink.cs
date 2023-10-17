@@ -12,19 +12,19 @@
             sugarTeaSpoonQuantity = sugarTeaSpoonQuantity_;
         }
 
-        protected string GetDrinkName()
+        public string GetDrinkName()
         {
             var copyDrinkName = drinkName;
             return copyDrinkName;
         }
 
-        protected int GetCupSize()
+        public int GetCupSize()
         {
             var copyCupSize = cupSize;
             return copyCupSize;
         }
 
-        protected int GetSugarTeaSpoonQuantity()
+        public int GetSugarTeaSpoonQuantity()
         {
             var copySugarTeaSpoonQuantity = sugarTeaSpoonQuantity;
             return copySugarTeaSpoonQuantity;
@@ -34,9 +34,8 @@
          */
         protected void SugarAdding()
         {
-            var sugarSpoons = GetSugarTeaSpoonQuantity();
-            if (sugarSpoons == 0) return;
-            Console.WriteLine("Додаємо " + sugarSpoons + " чайних ложок цукру");
+            if (GetSugarTeaSpoonQuantity() == 0) return;
+            Console.WriteLine("Додаємо " + GetSugarTeaSpoonQuantity() + " чайних ложок цукру");
             Thread.Sleep(1000);
         }
         /**
